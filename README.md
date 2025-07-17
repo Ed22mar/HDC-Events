@@ -1,29 +1,43 @@
-# HDC Events - Laravel Project
 
-Este projeto é uma aplicação web desenvolvida com Laravel para gerenciamento de eventos. Permite aos usuários buscar, visualizar, participar e criar eventos, além de gerenciar participantes e informações dos eventos.
 
-## Funcionalidades
-- Listagem de eventos
-- Busca de eventos por nome
-- Visualização de detalhes do evento
-- Participação em eventos
-- Criação e edição de eventos
-- Autenticação de usuários
+<p align="center">
+  <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="300" alt="Laravel Logo">
+</p>
+
+<h1 align="center">HDC Events</h1>
+
+<p align="center">
+  <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+  <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+  <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+  <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
+
+---
+
+Sistema completo para gerenciamento de eventos, desenvolvido com Laravel. Permite criar, editar, visualizar e participar de eventos, com autenticação de usuários e dashboard.
+
+## :rocket: Funcionalidades
+- Listar eventos
+- Buscar eventos por nome
+- Visualizar detalhes do evento
+- Participar de eventos (relacionamento many-to-many)
+- Criar, editar e excluir eventos
+- Autenticação de usuários (Jetstream, Fortify)
 - Dashboard do usuário
 
-## Estrutura do Projeto
-- `app/`: Lógica de negócio, controllers, models, providers, components
-- `resources/views/`: Views Blade para frontend
-- `public/`: Arquivos públicos (CSS, JS, imagens)
-- `database/`: Migrations, seeders, factories, banco SQLite
-- `routes/`: Rotas web, API e console
-- `config/`: Configurações do Laravel e pacotes
-- `tests/`: Testes unitários e de funcionalidades
+## :file_folder: Estrutura
+- `app/` - Controllers, Models, Providers
+- `resources/views/` - Templates Blade
+- `public/` - Assets públicos (CSS, JS, imagens)
+- `database/` - Migrations, Seeders, Factories
+- `routes/` - Rotas web e API
+- `config/` - Configurações
 
-## Instalação
+## :wrench: Instalação
 1. Clone o repositório:
    ```sh
-   git clone <repo-url>
+   git clone https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git
    cd nome-do-projeto
    ```
 2. Instale as dependências:
@@ -31,12 +45,12 @@ Este projeto é uma aplicação web desenvolvida com Laravel para gerenciamento 
    composer install
    npm install
    ```
-3. Configure o arquivo `.env`:
+3. Configure o `.env`:
    ```sh
    cp .env.example .env
    # Edite as variáveis conforme seu ambiente
    ```
-4. Gere a chave da aplicação:
+4. Gere a chave:
    ```sh
    php artisan key:generate
    ```
@@ -44,7 +58,7 @@ Este projeto é uma aplicação web desenvolvida com Laravel para gerenciamento 
    ```sh
    php artisan migrate --seed
    ```
-6. Compile os assets (Vite):
+6. Compile os assets:
    ```sh
    npm run build
    ```
@@ -53,36 +67,95 @@ Este projeto é uma aplicação web desenvolvida com Laravel para gerenciamento 
    php artisan serve
    ```
 
-## Desenvolvimento
-- As views estão em `resources/views/`
-- Os controllers em `app/Http/Controllers/`
-- Os models em `app/Models/`
-- As rotas em `routes/web.php` e `routes/api.php`
-- Os assets frontend são gerenciados por Vite (`resources/css`, `resources/js`)
-- Para criar migrations: `php artisan make:migration <nome>`
-- Para criar controllers: `php artisan make:controller <nome>`
-- Para criar models: `php artisan make:model <nome>`
+## :computer: Testes
+```sh
+php artisan test
+```
 
-## Testes
-- Para rodar os testes:
+## :bulb: Observações
+- O arquivo `public/build/manifest.json` deve existir após rodar `npm run build`.
+- O banco padrão é SQLite, configurável no `.env`.
+
+## :handshake: Contribuição
+1. Fork o projeto
+2. Crie uma branch: `git checkout -b minha-feature`
+3. Commit: `git commit -m "Minha feature"`
+4. Push: `git push origin minha-feature`
+5. Abra um Pull Request
+
+## :page_facing_up: Licença
+MIT
+---
+Projeto desenvolvido com [Laravel](https://laravel.com/) seguindo as melhores práticas do framework.
+
+## Funcionalidades
+- Listar eventos
+- Buscar eventos por nome
+- Visualizar detalhes do evento
+- Participar de eventos (relacionamento many-to-many)
+- Criar, editar e excluir eventos
+- Autenticação de usuários (Jetstream, Fortify)
+- Dashboard do usuário
+
+## Estrutura
+- `app/` - Controllers, Models, Providers
+- `resources/views/` - Templates Blade
+- `public/` - Assets públicos (CSS, JS, imagens)
+- `database/` - Migrations, Seeders, Factories
+- `routes/` - Rotas web e API
+- `config/` - Configurações
+
+## Instalação
+1. Clone o repositório:
    ```sh
-   php artisan test
+   git clone https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git
+   cd nome-do-projeto
+   ```
+2. Instale as dependências:
+   ```sh
+   composer install
+   npm install
+   ```
+3. Configure o `.env`:
+   ```sh
+   cp .env.example .env
+   # Edite as variáveis conforme seu ambiente
+   ```
+4. Gere a chave:
+   ```sh
+   php artisan key:generate
+   ```
+5. Execute as migrations e seeders:
+   ```sh
+   php artisan migrate --seed
+   ```
+6. Compile os assets:
+   ```sh
+   npm run build
+   ```
+7. Inicie o servidor:
+   ```sh
+   php artisan serve
    ```
 
+## Testes
+```sh
+php artisan test
+```
+
 ## Observações
-- Certifique-se de que o arquivo `public/build/manifest.json` existe após rodar `npm run build`.
-- O projeto utiliza autenticação via Laravel Fortify e Jetstream.
-- O banco padrão é SQLite, mas pode ser alterado no `.env`.
+- O arquivo `public/build/manifest.json` deve existir após rodar `npm run build`.
+- O banco padrão é SQLite, configurável no `.env`.
 
 ## Contribuição
 1. Fork o projeto
 2. Crie uma branch: `git checkout -b minha-feature`
-3. Commit suas alterações: `git commit -m 'Minha feature'`
-4. Push para o repositório: `git push origin minha-feature`
+3. Commit: `git commit -m "Minha feature"`
+4. Push: `git push origin minha-feature`
 5. Abra um Pull Request
 
 ## Licença
-Este projeto está sob a licença MIT.
+MIT
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
